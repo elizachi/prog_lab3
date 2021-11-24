@@ -1,7 +1,7 @@
 package interfaces;
 
 // TODO переименовать класс
-public interface Explorable {
+public interface Exploration {
     void raid(); //облазили
     void explore(); //изучилии
     void learn(); //узнали

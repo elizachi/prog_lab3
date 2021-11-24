@@ -16,7 +16,7 @@ public class Place extends Location {
 
     public void describe(){
         MessagesImpl message = new MessagesImpl();
-        message.descriptionMessage(placeDescription, length, getName());
+        message.descriptionMessage(placeDescription, length, getName(), 1);
     }
 
 

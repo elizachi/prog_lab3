@@ -11,12 +11,9 @@ public class House extends Location {
         super(name);
     }
 
-    public String getName() {
-        return super.getName();
-    }
     public void describe(){
         MessagesImpl message = new MessagesImpl();
-        message.descriptionMessage(placeDescription, length, getName());
+        message.descriptionMessage(placeDescription, length, this.getName(), 1);
     }
 
 }

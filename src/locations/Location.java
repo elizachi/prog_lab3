@@ -1,14 +1,16 @@
 package locations;
 
-public abstract class Location {
+import interfaces.Described;
+
+public abstract class Location implements Described {
     private final String name;
 
     public String getName() {
-        return name;
+        return this.name;
     }
     Location(String name) {
         this.name = name;
     }
-    protected void describe(){}
+    public void describe(){}
 
 }

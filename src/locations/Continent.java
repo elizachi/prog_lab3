@@ -1,16 +1,14 @@
 package locations;
 
 import interfaces.MessagesImpl;
-import locations.Location;
 
-public class Mountains extends Location {
-    String[] placeDescription = new String[] {"эти"};
+public class Continent extends Location{
+    String[] placeDescription = new String[] {"весь"};
     int length = placeDescription.length;
 
-    Mountains(String name) {
+    public Continent(String name) {
         super(name);
     }
-
     public void describe(){
         for(int i = 0; i < length; i++) {
             MessagesImpl message = new MessagesImpl();

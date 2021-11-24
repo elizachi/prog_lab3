@@ -1,6 +1,5 @@
 package objects;
 
-// TODO переименовать класс
 public abstract class SimpleObject {
     private final String name;
     private final String property;

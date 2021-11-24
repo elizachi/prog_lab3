@@ -1,6 +1,8 @@
 package characters;
 
-public abstract class Character {
+import interfaces.Described;
+
+public abstract class Character implements Described {
     private final String name;
 
     Character(String name) {

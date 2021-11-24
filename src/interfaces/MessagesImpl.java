@@ -1,11 +1,13 @@
 package interfaces;
 
 public class MessagesImpl implements Messages{
-    public void descriptionMessage(String [] words, int length, String name){
+    public void descriptionMessage(String [] words, int length, String name, int flag){
         for(int i = 0; i < length; i++){
             System.out.print(words[i] + " ");
         }
-        System.out.print(name + " ");
+        if(flag == 1){
+            System.out.print(name + " ");
+        }
     }
     public void actionMessage(String action, String name){
         System.out.print(name + " ");
@@ -19,7 +21,7 @@ public class MessagesImpl implements Messages{
         }
 
     }
-    public void tempMessage(String name, String property){
+    public void simpleObjectMessage(String name, String property){
         System.out.print(property + " ");
         System.out.print(name + " ");
     }

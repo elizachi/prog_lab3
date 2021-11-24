@@ -1,10 +1,10 @@
 package characters;
-import interfaces.Explorable;
+import interfaces.Exploration;
 import interfaces.MessagesImpl;
 import locations.*;
 import objects.Goal;
 
-public class MainCharacter extends Character implements Explorable {
+public class MainCharacter extends Character implements Exploration {
 
     public MainCharacter(String name) {
         super(name);
@@ -27,7 +27,7 @@ public class MainCharacter extends Character implements Explorable {
         Goal goal = new Goal("цель", "новую");
         MessagesImpl message = new MessagesImpl();
         message.actionMessage("узнали", this.getName());
-        message.tempMessage(goal.getName(), goal.getProperty());
+        message.simpleObjectMessage(goal.getName(), goal.getProperty());
     }
 
     @Override
@@ -48,4 +48,7 @@ public class MainCharacter extends Character implements Explorable {
         highlands.describe();
         plateau.describe();
     }
+
+    @Override
+    public void describe() {}
 }
