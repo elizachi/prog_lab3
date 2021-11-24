@@ -1,4 +1,8 @@
-public class Mountains extends Location{
+package locations;
+
+import locations.Location;
+
+public class Mountains extends Location {
     String[] placeDescription = new String[] {"эти"};
     int length = placeDescription.length;
 

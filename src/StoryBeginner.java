@@ -1,9 +1,13 @@
+import characters.*;
+import interfaces.MessagesImpl;
+import locations.*;
+
 public class StoryBeginner {
     public static void main(String[] args) {
         House house = new House("дом");
         MainCharacter we = new MainCharacter("Мы");
         CreatorNecronomicona creator = new CreatorNecronomicona("творец \"Некрономикона\"", "Безумный");
-        Messages writer = new Messages();
+        MessagesImpl writer = new MessagesImpl();
         house.describe();
         we.raid();
         we.explore();

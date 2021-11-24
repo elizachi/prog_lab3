@@ -1,15 +1,17 @@
-public class Messages {
-    void descriptionMessage(String [] words, int length, String name){
+package interfaces;
+
+public class MessagesImpl implements Messages{
+    public void descriptionMessage(String [] words, int length, String name){
         for(int i = 0; i < length; i++){
             System.out.print(words[i] + " ");
         }
         System.out.print(name + " ");
     }
-    void actionMessage(String action, String name){
+    public void actionMessage(String action, String name){
         System.out.print(name + " ");
         System.out.print(action + " ");
     }
-    void endOfSentence(int number){
+    public void endOfSentence(int number){
         if(number == 0){
             System.out.print(".\n");
         } else if(number == 1){
@@ -17,7 +19,7 @@ public class Messages {
         }
 
     }
-    void tempMessage(String name, String property){
+    public void tempMessage(String name, String property){
         System.out.print(property + " ");
         System.out.print(name + " ");
     }
