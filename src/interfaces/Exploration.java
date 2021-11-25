@@ -1,10 +1,12 @@
 package interfaces;
 
-// TODO переименовать класс
+import objects.Mountains;
+import objects.PassiveObjects;
+
 public interface Exploration {
-    void raid(); //облазили
-    void explore(); //изучилии
-    void learn(); //узнали
-    void entered(); //попали
-    void belive(); //поверили
+    void raid(PassiveObjects passiveObject); //облазили и изучили
+    void learn(PassiveObjects passiveObject); //узнали
+    void entered(PassiveObjects passiveObject); //попали
+    void belive(PassiveObjects passiveObject); //поверили
+    void see(Mountains mountains); //видели
 }

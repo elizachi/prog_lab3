@@ -1,8 +1,7 @@
 package characters;
 import interfaces.Exploration;
 import interfaces.MessagesImpl;
-import locations.*;
-import objects.Goal;
+import objects.*;
 
 public class MainCharacter extends Character implements Exploration {
 
@@ -11,44 +10,33 @@ public class MainCharacter extends Character implements Exploration {
     }
 
     @Override
-    public void raid() {
+    public void raid(PassiveObjects passiveObject) {
         MessagesImpl message = new MessagesImpl();
-        message.actionMessage("облазили", this.getName());
+        message.actionMessagePasObj("облазили и изучили", this.getName(), passiveObject);
     }
 
     @Override
-    public void explore() {
+    public void learn(PassiveObjects passiveObject) {
         MessagesImpl message = new MessagesImpl();
-        message.actionMessage("изучили", this.getName());
+        message.actionMessagePasObj("узнали", this.getName(),passiveObject);
     }
 
     @Override
-    public void learn() {
-        Goal goal = new Goal("цель", "новую");
+    public void entered(PassiveObjects passiveObject) {
         MessagesImpl message = new MessagesImpl();
-        message.actionMessage("узнали", this.getName());
-        message.simpleObjectMessage(goal.getName(), goal.getProperty());
+        message.actionMessagePasObj("попали в", this.getName(), passiveObject);
     }
 
     @Override
-    public void entered() {
-        Place placeOfTheWorld = new Place("место на земле");
+    public void belive(PassiveObjects passiveObject) {
         MessagesImpl message = new MessagesImpl();
-        message.actionMessage("попали", this.getName());
-        placeOfTheWorld.describe();
+        message.actionMessagePasObj("поверили что", this.getName(), passiveObject);
+        message.descriptionMessage("то самое легендарное", "плато Лэнг", 1);
     }
 
     @Override
-    public void belive() {
-        MessagesImpl message = new MessagesImpl();
-        message.actionMessage("поверили", this.getName());
-        message.endOfSentence(1);
-        Highlands highlands = new Highlands("нагорье");
-        LengPlateau plateau = new LengPlateau("плато Ленг");
-        highlands.describe();
-        plateau.describe();
+    public void see(Mountains mountains) {
+
     }
 
-    @Override
-    public void describe() {}
 }

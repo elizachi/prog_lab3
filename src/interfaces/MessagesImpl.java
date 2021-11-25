@@ -1,18 +1,21 @@
 package interfaces;
 
+import objects.Mountains;
+import objects.PassiveObjects;
+
 public class MessagesImpl implements Messages{
-    public void descriptionMessage(String [] words, int length, String name, int flag){
-        for(int i = 0; i < length; i++){
-            System.out.print(words[i] + " ");
-        }
+    public void descriptionMessage(String properties, String name, int flag){
+        System.out.print(properties + " ");
         if(flag == 1){
             System.out.print(name + " ");
         }
     }
-    public void actionMessage(String action, String name){
-        System.out.print(name + " ");
-        System.out.print(action + " ");
+
+    public void actionMessagePasObj(String action, Object nameActiveObject, PassiveObjects namePassiveObject){
+        System.out.print(nameActiveObject + " " + action + " ");
+        descriptionMessage(namePassiveObject.getProperties(), namePassiveObject.getName(), 1);
     }
+
     public void endOfSentence(int number){
         if(number == 0){
             System.out.print(".\n");
@@ -21,8 +24,10 @@ public class MessagesImpl implements Messages{
         }
 
     }
-    public void simpleObjectMessage(String name, String property){
-        System.out.print(property + " ");
-        System.out.print(name + " ");
+
+    @Override
+    public void actionMessageMount(String action, Object nameActiveObject, Mountains mountains) {
+        System.out.print(nameActiveObject + " " + action + " ");
+        descriptionMessage(mountains.getProperties(), mountains.getName(), 1);
     }
 }
