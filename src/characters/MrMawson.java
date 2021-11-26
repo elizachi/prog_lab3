@@ -1,7 +1,7 @@
 package characters;
 
 import interfaces.Exploration;
-import interfaces.MessagesImpl;
+import service.MessagesImpl;
 import objects.Mountains;
 import objects.PassiveObjects;
 

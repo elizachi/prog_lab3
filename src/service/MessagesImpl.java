@@ -1,9 +1,10 @@
-package interfaces;
+package service;
 
+import interfaces.Messages;
 import objects.Mountains;
 import objects.PassiveObjects;
 
-public class MessagesImpl implements Messages{
+public class MessagesImpl implements Messages {
 
     @Override
     public void descriptionMessage(String properties, String name, int flag){

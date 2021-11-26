@@ -1,6 +1,6 @@
 package objects;
 
-import interfaces.MessagesImpl;
+import service.MessagesImpl;
 
 public class Arch extends Mountains{
     public Arch(String name, String properties) {

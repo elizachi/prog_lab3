@@ -1,5 +1,5 @@
 import characters.*;
-import interfaces.MessagesImpl;
+import service.MessagesImpl;
 import objects.*;
 
 public class StoryBeginner {

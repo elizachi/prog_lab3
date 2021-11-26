@@ -1,5 +1,5 @@
 package characters;
-import interfaces.MessagesImpl;
+import service.MessagesImpl;
 import objects.PassiveObjects;
 
 public class CreatorNecronomicona extends Character {
