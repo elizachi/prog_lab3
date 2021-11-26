@@ -14,4 +14,9 @@ public class CreatorNecronomicona extends Character {
         message.actionMessagePasObj("страшился упоминать", this.getName(), passiveObject);
     }
 
+    @Override
+    public String toString(){
+        return "parent class: Character\n" + "class: CreatorNecronomicona\n" + "name: " + this.getName() + "\n" + "description: класс, реализующий персонажа \"творец \"Некрономикона \"\".";
+    }
+
 }

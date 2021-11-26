@@ -39,4 +39,9 @@ public class MainCharacter extends Character implements Exploration {
 
     }
 
+    @Override
+    public String toString(){
+        return "parent class: Character\n" + "class: MainCharacter\n" + "name: " + this.getName() + "\n" + "description: класс, реализующий главное лицо повествования.";
+    }
+
 }

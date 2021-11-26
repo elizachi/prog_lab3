@@ -15,6 +15,12 @@ public class MrWilkes extends Character implements Exploration {
         MessagesImpl message = new MessagesImpl();
         message.actionMessageMount("видел", this.getName(), mountains);
     }
+
+    @Override
+    public String toString(){
+        return "parent class: Character\n" + "class: MrWilkes\n" + "name: " + this.getName() + "\n" + "description: класс, реализующий персонажа \"Мистер Уиклс\".";
+    }
+
     @Override
     public void raid(PassiveObjects passiveObject) {
 

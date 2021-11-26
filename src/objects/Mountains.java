@@ -26,4 +26,8 @@ public class Mountains extends Objects {
         message.actionMessageMount("образует", this.getName(), arch);
     }
 
+    @Override
+    public String toString(){
+        return "parent class: Objects\n" + "class: Arch\n" + "name: " + this.getName() + "\n" + "properties: " + this.getProperties() + "\n" + "description: класс, реализующий объект \"Горы\".";
+    }
 }

@@ -14,6 +14,9 @@ public abstract class Objects{
         this.name = name;
         this.properties = properties;
     }
-    public void describe(){}
 
+    @Override
+    public String toString(){
+        return "type: abstract\n" + "class: Objects\n" + "description: абстрактный класс, от которого наследуются классы неживых объектов.";
+    }
 }

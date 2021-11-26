@@ -17,6 +17,11 @@ public class MrMawson extends Character implements Exploration {
     }
 
     @Override
+    public String toString(){
+        return "parent class: Character\n" + "class: MrMawson\n" + "name: " + this.getName() + "\n" + "description: класс, реализующий персонажа \"Мистер Маусон\".";
+    }
+
+    @Override
     public void raid(PassiveObjects passiveObject) {
 
     }

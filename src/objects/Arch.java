@@ -15,4 +15,9 @@ public class Arch extends Mountains{
         MessagesImpl message = new MessagesImpl();
         message.actionMessagePasObj("упирается в", this.getName(), passiveObject);
     }
+
+    @Override
+    public String toString(){
+        return "parent class: Mountains\n" + "class: Arch\n" + "name: " + this.getName() + "\n" + "properties: " + this.getProperties() + "\n" + "description: класс, реализующий объект \"Арка\"";
+    }
 }
