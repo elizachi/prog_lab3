@@ -22,6 +22,16 @@ public class MrWilkes extends Character implements Exploration {
     }
 
     @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
     public void raid(PassiveObjects passiveObject) {
 
     }

@@ -44,4 +44,13 @@ public class MainCharacter extends Character implements Exploration {
         return "parent class: Character\n" + "class: MainCharacter\n" + "name: " + this.getName() + "\n" + "description: класс, реализующий главное лицо повествования.";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

@@ -39,4 +39,14 @@ public class MessagesImpl implements Messages{
     public String toString(){
         return "class: MessagesImpl\n" + "description: класс реализует генерацию сообщений для вывода на консоль. Применяется в методах других классов.";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

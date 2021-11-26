@@ -19,4 +19,17 @@ public abstract class Objects{
     public String toString(){
         return "type: abstract\n" + "class: Objects\n" + "description: абстрактный класс, от которого наследуются классы неживых объектов.";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Objects objects = (Objects) o;
+        return java.util.Objects.equals(name, objects.name) && java.util.Objects.equals(properties, objects.properties);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(name, properties);
+    }
 }

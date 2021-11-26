@@ -19,4 +19,13 @@ public class CreatorNecronomicona extends Character {
         return "parent class: Character\n" + "class: CreatorNecronomicona\n" + "name: " + this.getName() + "\n" + "description: класс, реализующий персонажа \"творец \"Некрономикона \"\".";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
