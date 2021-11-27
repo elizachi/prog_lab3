@@ -32,10 +32,6 @@ public class MainCharacter extends Character implements Exploration {
         message.descriptionMessage("то самое легендарное", "плато Лэнг", 1);
     }
 
-    @Override
-    public void see(Mountains mountains) {
-
-    }
 
     @Override
     public String toString(){

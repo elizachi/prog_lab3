@@ -1,6 +1,5 @@
 package interfaces;
 
-import objects.Mountains;
 import objects.PassiveObjects;
 
 public interface Exploration {
@@ -8,5 +7,4 @@ public interface Exploration {
     void learn(PassiveObjects passiveObject); //узнали
     void entered(PassiveObjects passiveObject); //попали
     void belive(PassiveObjects passiveObject); //поверили
-    void see(Mountains mountains); //видели
 }
