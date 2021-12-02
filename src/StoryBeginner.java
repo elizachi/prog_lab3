@@ -46,5 +46,6 @@ public class StoryBeginner {
         writer.endOfSentence(0);
         mrMawson.see(mountains);
         writer.endOfSentence(0);
+        MainCharacter gg = new MainCharacter("Я");
     }
 }
