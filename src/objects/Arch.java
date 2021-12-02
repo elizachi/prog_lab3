@@ -8,7 +8,7 @@ public class Arch extends Mountains{
         super(name, properties);
     }
 
-    MessagesImpl message = new MessagesImpl();
+    private final MessagesImpl message = new MessagesImpl();
 
     public void stand(PassiveObjects passiveObject){
         message.actionMessagePasObj("стоит возле", this.getName(), passiveObject);

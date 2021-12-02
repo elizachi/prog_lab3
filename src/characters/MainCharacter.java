@@ -9,7 +9,7 @@ public class MainCharacter extends Character implements Exploration {
         super(name);
     }
 
-    MessagesImpl message = new MessagesImpl();
+    private final MessagesImpl message = new MessagesImpl();
 
     @Override
     public void raid(PassiveObjects passiveObject) {
