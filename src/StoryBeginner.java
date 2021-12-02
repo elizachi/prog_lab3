@@ -18,9 +18,18 @@ public class StoryBeginner {
         Arch arch = new Arch("Арка", "");
         PassiveObjects camp = new PassiveObjects("лагеря", "нашего");
         PassiveObjects coast = new PassiveObjects("побережье", "ледяное морское");
-        MrWilkes mrWilkes = new MrWilkes("Мистер Уилкс");
-        MrMawson mrMawson = new MrMawson("Мистер Маусон");
+        Mister mrWilkes = new Mister("Мистер Уилкс");
+        Mister mrMawson = new Mister("Мистер Маусон");
         Mountains mountains = new Mountains("горы", "эти");
+        PassiveObjects discovery = new PassiveObjects("открытие","сокрушительное");
+        Mountains range = new Mountains("хребет", "этот");
+        Woodcarver woodcarver = new Woodcarver("резчики по дереву");
+        PassiveObjects cha = new PassiveObjects("нас", "");
+        Mountains anotherRange = new Mountains("хребту", "ещё более грандиозному");
+        Mystery mystery = new Mystery("тайна", "Мрачная");
+        Woodcarver carver = new Woodcarver("Скульпторы");
+        PassiveObjects theme = new PassiveObjects("тему", "эту");
+        Woodcarver anotherCarver = new Woodcarver("Другие");
         MessagesImpl writer = new MessagesImpl();
         we.raid(house);
         writer.endOfSentence(0);
@@ -46,6 +55,15 @@ public class StoryBeginner {
         writer.endOfSentence(0);
         mrMawson.see(mountains);
         writer.endOfSentence(0);
-        MainCharacter gg = new MainCharacter("Я");
+        we.learn(discovery);
+        writer.endOfSentence(0);
+        woodcarver.assure(cha, range, anotherRange);
+        writer.endOfSentence(0);
+        mystery.hid(mountains);
+        writer.endOfSentence(0);
+        carver.doNotSay(theme, true);
+        writer.endOfSentence(0);
+        anotherCarver.doNotSay(theme, false);
+        writer.endOfSentence(0);
     }
 }

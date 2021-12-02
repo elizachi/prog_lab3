@@ -3,8 +3,8 @@ package characters;
 import service.MessagesImpl;
 import objects.Mountains;
 
-public class MrWilkes extends Character {
-    public MrWilkes(String name) {
+public class Mister extends Character {
+    public Mister(String name) {
         super(name);
     }
 
@@ -15,7 +15,7 @@ public class MrWilkes extends Character {
 
     @Override
     public String toString(){
-        return "parent class: Character\n" + "class: MrWilkes\n" + "name: " + this.getName() + "\n" + "description: класс, реализующий персонажа \"Мистер Уиклс\".";
+        return "parent class: Character\n" + "class: Mister\n" + "name: " + this.getName() + "\n" + "description: класс, реализующий персонажа \"Мистер Маусон\".";
     }
 
     @Override

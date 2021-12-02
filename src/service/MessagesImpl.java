@@ -6,6 +6,7 @@ import objects.PassiveObjects;
 
 public class MessagesImpl implements Messages {
 
+    // TODO прописать перегрузку для actionMessage
     @Override
     public void descriptionMessage(String properties, String name, int flag){
         System.out.print(properties + " ");
