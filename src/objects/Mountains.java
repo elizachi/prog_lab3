@@ -9,7 +9,7 @@ public class Mountains extends Objects {
         super(name, properties);
     }
 
-    MessagesImpl message = new MessagesImpl();
+    private final MessagesImpl message = new MessagesImpl();
 
     public void born(PassiveObjects passiveObject){
         message.descriptionMessage(this.getProperties(), "", 0);
