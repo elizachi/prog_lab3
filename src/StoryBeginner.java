@@ -1,7 +1,7 @@
 import characters.*;
 import service.MessagesImpl;
 import objects.*;
-
+// TODO переделать, чтобы было более читабельно
 public class StoryBeginner {
     public static void main(String[] args) {
         PassiveObjects house = new PassiveObjects("дом", "этот");
@@ -15,7 +15,7 @@ public class StoryBeginner {
         PassiveObjects land = new PassiveObjects("Земле у моря Уэддела", "");
         PassiveObjects continent = new PassiveObjects("континент", "весь");
         Mountains massif = new Mountains("массив", "Наиболее высокий");
-        Arch arch = new Arch("Арка", "");
+        Mountains.Arch arch = new Mountains.Arch("Арка", "");
         PassiveObjects camp = new PassiveObjects("лагеря", "нашего");
         PassiveObjects coast = new PassiveObjects("побережье", "ледяное морское");
         Mister mrWilkes = new Mister("Мистер Уилкс");

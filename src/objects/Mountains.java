@@ -9,6 +9,30 @@ public class Mountains extends Objects {
         super(name, properties);
     }
 
+        public static class Arch extends Mountains{
+
+        public Arch(String name, String properties) {
+            super(name, properties);
+        }
+
+        private final MessagesImpl message = new MessagesImpl();
+
+        public void stand(PassiveObjects passiveObject){
+            message.actionMessagePasObj("стоит возле", this.getName(), passiveObject);
+        }
+
+        public void ends(PassiveObjects passiveObject){
+            message.actionMessagePasObj("упирается в", this.getName(), passiveObject);
+        }
+
+        @Override
+        public String toString(){
+            return "type: inner class\n" + "parent class: Mountains\n" + "class: Arch\n" + "name: " +
+                    this.getName() + "\n" + "properties: " + this.getProperties() +
+                    "\n" + "description: класс, реализующий объект \"Арка\", является внутренним классом класса Mountains";
+        }
+    }
+
     private final MessagesImpl message = new MessagesImpl();
 
     public void born(PassiveObjects passiveObject){
