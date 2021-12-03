@@ -15,7 +15,8 @@ public class Mister extends Character {
 
     @Override
     public String toString(){
-        return "parent class: Character\n" + "class: Mister\n" + "name: " + this.getName() + "\n" + "description: класс, реализующий персонажа \"Мистер Маусон\".";
+        return "parent class: Character\n" + "class: Mister\n" + "name: " + this.getName() +
+                "\n" + "description: класс, реализующий персонажей \"Мистер Маусон\" и \"Мистер Уилкс\".";
     }
 
     @Override

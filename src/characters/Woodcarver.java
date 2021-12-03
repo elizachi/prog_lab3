@@ -36,4 +36,20 @@ public class Woodcarver extends Character{
             message.actionMessagePasObj("с неохотой и робостью брались рассказывать про", this.getName(), passiveObject);
         }
     }
+
+    @Override
+    public String toString(){
+        return "parent class: Character\n" + "class: Woodcarver\n" + "name: " + this.getName() +
+                "\n" + "description: класс, реализующий мастеров, фигурирующих в истории.";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

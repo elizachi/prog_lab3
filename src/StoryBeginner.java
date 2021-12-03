@@ -6,31 +6,39 @@ public class StoryBeginner {
     public static void main(String[] args) {
         PassiveObjects house = new PassiveObjects("дом", "этот");
         PassiveObjects goal = new PassiveObjects("цель", "новую");
-        PassiveObjects place = new PassiveObjects("место на Земле", "самое таинственное, жуткое, зловещее, древнее");
-        PassiveObjects highland = new PassiveObjects("нагорье", "мрачное");
-        PassiveObjects evil = new PassiveObjects("сосредоточие зла", "");
-        MainCharacter we = new MainCharacter("Мы");
-        CreatorNecronomicona creator = new CreatorNecronomicona("творец \"Некрономикона\"");
-        Mountains mountainRange = new Mountains("цепь", "Грандиозная горная");
-        PassiveObjects land = new PassiveObjects("Земле у моря Уэддела", "");
+        PassiveObjects evil = new PassiveObjects("зла", "сосредоточие");
+        PassiveObjects land = new PassiveObjects("Уэддела", "Земле у моря");
         PassiveObjects continent = new PassiveObjects("континент", "весь");
-        Mountains massif = new Mountains("массив", "Наиболее высокий");
-        Mountains.Arch arch = new Mountains.Arch("Арка", "");
         PassiveObjects camp = new PassiveObjects("лагеря", "нашего");
         PassiveObjects coast = new PassiveObjects("побережье", "ледяное морское");
+        PassiveObjects discovery = new PassiveObjects("открытие","сокрушительное");
+        PassiveObjects cha = new PassiveObjects("нас", "");
+        PassiveObjects theme = new PassiveObjects("тему", "эту");
+
+        MainCharacter we = new MainCharacter("Мы");
+
+        CreatorNecronomicona creator = new CreatorNecronomicona("творец \"Некрономикона\"");
+
+        Mountains place = new Mountains("место на Земле", "самое таинственное, жуткое, зловещее, древнее");
+        Mountains highland = new Mountains("нагорье", "мрачное");
+        Mountains mountainRange = new Mountains("цепь", "Грандиозная горная");
+        Mountains massif = new Mountains("массив", "Наиболее высокий");
+        Mountains.Arch arch = new Mountains.Arch("Арка", "");
+        Mountains mountains = new Mountains("горы", "эти");
+        Mountains range = new Mountains("хребет", "этот");
+        Mountains anotherRange = new Mountains("хребту", "ещё более грандиозному");
+
         Mister mrWilkes = new Mister("Мистер Уилкс");
         Mister mrMawson = new Mister("Мистер Маусон");
-        Mountains mountains = new Mountains("горы", "эти");
-        PassiveObjects discovery = new PassiveObjects("открытие","сокрушительное");
-        Mountains range = new Mountains("хребет", "этот");
+
         Woodcarver woodcarver = new Woodcarver("резчики по дереву");
-        PassiveObjects cha = new PassiveObjects("нас", "");
-        Mountains anotherRange = new Mountains("хребту", "ещё более грандиозному");
-        Mystery mystery = new Mystery("тайна", "Мрачная");
         Woodcarver carver = new Woodcarver("Скульпторы");
-        PassiveObjects theme = new PassiveObjects("тему", "эту");
         Woodcarver anotherCarver = new Woodcarver("Другие");
+
+        Mystery mystery = new Mystery("тайна", "Мрачная");
+
         MessagesImpl writer = new MessagesImpl();
+
         we.raid(house);
         writer.endOfSentence(0);
         we.learn(goal);

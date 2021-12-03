@@ -39,7 +39,8 @@ public class MessagesImpl implements Messages {
 
     @Override
     public String toString(){
-        return "class: MessagesImpl\n" + "description: класс реализует генерацию сообщений для вывода на консоль. Применяется в методах других классов.";
+        return "class: MessagesImpl\n" + "description: класс реализует генерацию сообщений для вывода на консоль. " +
+                "Применяется в методах других классов.";
     }
 
     @Override

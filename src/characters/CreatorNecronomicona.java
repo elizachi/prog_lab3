@@ -16,7 +16,8 @@ public class CreatorNecronomicona extends Character {
 
     @Override
     public String toString(){
-        return "parent class: Character\n" + "class: CreatorNecronomicona\n" + "name: " + this.getName() + "\n" + "description: класс, реализующий персонажа \"творец \"Некрономикона \"\".";
+        return "parent class: Character\n" + "class: CreatorNecronomicona\n" + "name: "
+                + this.getName() + "\n" + "description: класс, реализующий персонажа \"творец \"Некрономикона \"\".";
     }
 
     @Override

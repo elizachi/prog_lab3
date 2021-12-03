@@ -15,7 +15,8 @@ public abstract class Character {
 
     @Override
     public String toString(){
-        return "type: abstract\n" + "class: Character\n" + "description: абстрактный класс, от которого наследуются классы действующих персонажей.";
+        return "type: abstract\n" + "class: Character\n" + "description: абстрактный класс, " +
+                "от которого наследуются классы действующих персонажей.";
     }
 
     @Override
