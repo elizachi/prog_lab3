@@ -10,6 +10,6 @@ public class Mystery extends Objects{
     public void hid(Mountains object){
         MessagesImpl message = new MessagesImpl();
         message.descriptionMessage(getProperties(), "", 0);
-        message.actionMessageMount("окутывала", this.getName(), object);
+        message.actionMessage("окутывала", this.getName(), object);
     }
 }

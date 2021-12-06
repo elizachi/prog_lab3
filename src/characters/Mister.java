@@ -10,7 +10,7 @@ public class Mister extends Character {
 
     public void see(Mountains mountains) {
         MessagesImpl message = new MessagesImpl();
-        message.actionMessageMount("видел", this.getName(), mountains);
+        message.actionMessage("видел", this.getName(), mountains);
     }
 
     @Override

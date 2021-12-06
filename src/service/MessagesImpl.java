@@ -16,7 +16,7 @@ public class MessagesImpl implements Messages {
     }
 
     @Override
-    public void actionMessagePasObj(String action, Object nameActiveObject, PassiveObjects namePassiveObject){
+    public void actionMessage(String action, Object nameActiveObject, PassiveObjects namePassiveObject){
         System.out.print(nameActiveObject + " " + action + " ");
         descriptionMessage(namePassiveObject.getProperties(), namePassiveObject.getName(), 1);
     }
@@ -32,7 +32,7 @@ public class MessagesImpl implements Messages {
     }
 
     @Override
-    public void actionMessageMount(String action, Object nameActiveObject, Mountains mountains) {
+    public void actionMessage(String action, Object nameActiveObject, Mountains mountains) {
         System.out.print(nameActiveObject + " " + action + " ");
         descriptionMessage(mountains.getProperties(), mountains.getName(), 1);
     }

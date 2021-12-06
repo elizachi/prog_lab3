@@ -11,7 +11,7 @@ public class CreatorNecronomicona extends Character {
     public void afraid(PassiveObjects passiveObject){
         MessagesImpl message = new MessagesImpl();
         message.descriptionMessage("Безумный", "", 0);
-        message.actionMessagePasObj("страшился упоминать", this.getName(), passiveObject);
+        message.actionMessage("страшился упоминать", this.getName(), passiveObject);
     }
 
     @Override

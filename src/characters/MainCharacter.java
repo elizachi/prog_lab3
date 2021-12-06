@@ -13,22 +13,22 @@ public class MainCharacter extends Character implements Exploration {
 
     @Override
     public void raid(PassiveObjects passiveObject) {
-        message.actionMessagePasObj("облазили и изучили", this.getName(), passiveObject);
+        message.actionMessage("облазили и изучили", this.getName(), passiveObject);
     }
 
     @Override
     public void learn(PassiveObjects passiveObject) {
-        message.actionMessagePasObj("узнали", this.getName(),passiveObject);
+        message.actionMessage("узнали", this.getName(),passiveObject);
     }
 
     @Override
     public void entered(Mountains passiveObject) {
-        message.actionMessageMount("попали в", this.getName(), passiveObject);
+        message.actionMessage("попали в", this.getName(), passiveObject);
     }
 
     @Override
     public void belive(Mountains passiveObject) {
-        message.actionMessageMount("поверили что", this.getName(), passiveObject);
+        message.actionMessage("поверили что", this.getName(), passiveObject);
         message.descriptionMessage("то самое легендарное", "плато Лэнг", 1);
     }
 

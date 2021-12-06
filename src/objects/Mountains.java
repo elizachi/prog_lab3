@@ -18,11 +18,11 @@ public class Mountains extends Objects {
         private final MessagesImpl message = new MessagesImpl();
 
         public void stand(PassiveObjects passiveObject){
-            message.actionMessagePasObj("стоит возле", this.getName(), passiveObject);
+            message.actionMessage("стоит возле", this.getName(), passiveObject);
         }
 
         public void ends(PassiveObjects passiveObject){
-            message.actionMessagePasObj("упирается в", this.getName(), passiveObject);
+            message.actionMessage("упирается в", this.getName(), passiveObject);
         }
 
         @Override
@@ -37,17 +37,17 @@ public class Mountains extends Objects {
 
     public void born(PassiveObjects passiveObject){
         message.descriptionMessage(this.getProperties(), "", 0);
-        message.actionMessagePasObj("зарождалась на", this.getName(), passiveObject);
+        message.actionMessage("зарождалась на", this.getName(), passiveObject);
     }
 
     public void cross(PassiveObjects passiveObject){
-        message.actionMessagePasObj("пересекала", this.getName(), passiveObject);
+        message.actionMessage("пересекала", this.getName(), passiveObject);
     }
 
     public void formed() {
         Mountains arch = new Mountains("арку", "величественную");
         message.descriptionMessage(this.getProperties(), "", 0);
-        message.actionMessageMount("образует", this.getName(), arch);
+        message.actionMessage("образует", this.getName(), arch);
         Coordinates coo1 = Coordinates.EASTERN_LONGITUDE1;
         Coordinates coo2 = Coordinates.SOUTHERN_LATITUDE1;
         Coordinates coo3 = Coordinates.EASTERN_LONGITUDE2;
