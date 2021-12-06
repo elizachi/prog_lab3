@@ -1,5 +1,6 @@
 package objects;
 
+import interfaces.Messages;
 import service.Coordinates;
 import service.MessagesImpl;
 
@@ -15,7 +16,7 @@ public class Mountains extends Objects {
             super(name, properties);
         }
 
-        private final MessagesImpl message = new MessagesImpl();
+        private final Messages message = new MessagesImpl();
 
         public void stand(PassiveObjects passiveObject){
             message.actionMessage("стоит возле", this.getName(), passiveObject);

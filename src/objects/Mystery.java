@@ -1,5 +1,6 @@
 package objects;
 
+import interfaces.Messages;
 import service.MessagesImpl;
 
 public class Mystery extends Objects{
@@ -8,7 +9,7 @@ public class Mystery extends Objects{
     }
 
     public void hid(Mountains object){
-        MessagesImpl message = new MessagesImpl();
+        Messages message = new MessagesImpl();
         message.descriptionMessage(getProperties(), "", 0);
         message.actionMessage("окутывала", this.getName(), object);
     }

@@ -1,4 +1,5 @@
 import characters.*;
+import interfaces.Messages;
 import service.MessagesImpl;
 import objects.*;
 // TODO переделать, чтобы было более читабельно
@@ -15,7 +16,7 @@ public class StoryBeginner {
         PassiveObjects cha = new PassiveObjects("нас", "");
         PassiveObjects theme = new PassiveObjects("тему", "эту");
 
-        MainCharacter we = new MainCharacter("Мы");
+        MainCharacter we = MainCharacter.createWe();
 
         CreatorNecronomicona creator = new CreatorNecronomicona("творец \"Некрономикона\"");
 
@@ -37,7 +38,7 @@ public class StoryBeginner {
 
         Mystery mystery = new Mystery("тайна", "Мрачная");
 
-        MessagesImpl writer = new MessagesImpl();
+        Messages writer = new MessagesImpl();
 
         we.raid(house);
         writer.endOfSentence(0);

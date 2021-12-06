@@ -1,5 +1,6 @@
 package characters;
 
+import interfaces.Messages;
 import objects.Mountains;
 import objects.PassiveObjects;
 import service.MessagesImpl;
@@ -9,7 +10,7 @@ public class Woodcarver extends Character{
         super(name);
     }
 
-    private final MessagesImpl message = new MessagesImpl();
+    private final Messages message = new MessagesImpl();
 
     public void assure(PassiveObjects passiveObject, Mountains firstObject, Mountains secondObject){
         message.descriptionMessage("Древние", "", 0);

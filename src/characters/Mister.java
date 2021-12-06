@@ -1,5 +1,6 @@
 package characters;
 
+import interfaces.Messages;
 import service.MessagesImpl;
 import objects.Mountains;
 
@@ -9,7 +10,7 @@ public class Mister extends Character {
     }
 
     public void see(Mountains mountains) {
-        MessagesImpl message = new MessagesImpl();
+        Messages message = new MessagesImpl();
         message.actionMessage("видел", this.getName(), mountains);
     }
 

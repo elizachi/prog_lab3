@@ -1,5 +1,6 @@
 package characters;
 import interfaces.Exploration;
+import interfaces.Messages;
 import service.MessagesImpl;
 import objects.*;
 
@@ -9,7 +10,7 @@ public class MainCharacter extends Character implements Exploration {
         super(name);
     }
 
-    private final MessagesImpl message = new MessagesImpl();
+    private final Messages message = new MessagesImpl();
 
     @Override
     public void raid(PassiveObjects passiveObject) {
@@ -37,6 +38,10 @@ public class MainCharacter extends Character implements Exploration {
     public String toString(){
         return "parent class: Character\n" + "class: MainCharacter\n" +
                 "name: " + this.getName() + "\n" + "description: класс, реализующий главное лицо повествования.";
+    }
+
+    public static MainCharacter createWe(){
+        return new MainCharacter("Мы");
     }
 
     @Override

@@ -1,4 +1,5 @@
 package characters;
+import interfaces.Messages;
 import service.MessagesImpl;
 import objects.PassiveObjects;
 
@@ -9,7 +10,7 @@ public class CreatorNecronomicona extends Character {
     }
 
     public void afraid(PassiveObjects passiveObject){
-        MessagesImpl message = new MessagesImpl();
+        Messages message = new MessagesImpl();
         message.descriptionMessage("Безумный", "", 0);
         message.actionMessage("страшился упоминать", this.getName(), passiveObject);
     }
