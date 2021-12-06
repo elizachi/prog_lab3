@@ -2,28 +2,48 @@ package objects;
 
 import interfaces.Messages;
 import service.Coordinates;
-import service.MessagesImpl;
 
 public class Mountains extends Objects {
 
-    public Mountains(String name, String properties) {
+    protected final Messages messages;
+
+    public Mountains(String name, String properties, Messages messages) {
         super(name, properties);
+        this.messages = messages;
     }
 
-        public static class Arch extends Mountains{
+    public void born(PassiveObjects passiveObject){
+        messages.descriptionMessage(this.getProperties(), "", 0);
+        messages.actionMessage("зарождалась на", this.getName(), passiveObject);
+    }
 
-        public Arch(String name, String properties) {
-            super(name, properties);
+    public void cross(PassiveObjects passiveObject){
+        messages.actionMessage("пересекала", this.getName(), passiveObject);
+    }
+
+    public void formed() {
+        Mountains arch = new Mountains("арку", "величественную", messages);
+        messages.descriptionMessage(this.getProperties(), "", 0);
+        messages.actionMessage("образует", this.getName(), arch);
+        Coordinates coo1 = Coordinates.EASTERN_LONGITUDE1;
+        Coordinates coo2 = Coordinates.SOUTHERN_LATITUDE1;
+        Coordinates coo3 = Coordinates.EASTERN_LONGITUDE2;
+        Coordinates coo4 = Coordinates.SOUTHERN_LATITUDE2;
+        messages.descriptionMessage("между", coo1.getTitle() + ", " + coo2.getTitle() + " и " + coo3.getTitle() + ", " + coo4.getTitle(), 1);
+    }
+
+    public static class Arch extends Mountains{
+
+        public Arch(String name, String properties, Messages messages) {
+            super(name, properties, messages);
         }
 
-        private final Messages message = new MessagesImpl();
-
         public void stand(PassiveObjects passiveObject){
-            message.actionMessage("стоит возле", this.getName(), passiveObject);
+            messages.actionMessage("стоит возле", this.getName(), passiveObject);
         }
 
         public void ends(PassiveObjects passiveObject){
-            message.actionMessage("упирается в", this.getName(), passiveObject);
+            messages.actionMessage("упирается в", this.getName(), passiveObject);
         }
 
         @Override
@@ -32,28 +52,6 @@ public class Mountains extends Objects {
                     this.getName() + "\n" + "properties: " + this.getProperties() +
                     "\n" + "description: класс, реализующий объект \"Арка\", является внутренним классом класса Mountains";
         }
-    }
-
-    private final MessagesImpl message = new MessagesImpl();
-
-    public void born(PassiveObjects passiveObject){
-        message.descriptionMessage(this.getProperties(), "", 0);
-        message.actionMessage("зарождалась на", this.getName(), passiveObject);
-    }
-
-    public void cross(PassiveObjects passiveObject){
-        message.actionMessage("пересекала", this.getName(), passiveObject);
-    }
-
-    public void formed() {
-        Mountains arch = new Mountains("арку", "величественную");
-        message.descriptionMessage(this.getProperties(), "", 0);
-        message.actionMessage("образует", this.getName(), arch);
-        Coordinates coo1 = Coordinates.EASTERN_LONGITUDE1;
-        Coordinates coo2 = Coordinates.SOUTHERN_LATITUDE1;
-        Coordinates coo3 = Coordinates.EASTERN_LONGITUDE2;
-        Coordinates coo4 = Coordinates.SOUTHERN_LATITUDE2;
-        message.descriptionMessage("между", coo1.getTitle() + ", " + coo2.getTitle() + " и " + coo3.getTitle() + ", " + coo4.getTitle(), 1);
     }
 
     @Override

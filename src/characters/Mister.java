@@ -1,17 +1,19 @@
 package characters;
 
 import interfaces.Messages;
-import service.MessagesImpl;
 import objects.Mountains;
 
 public class Mister extends Character {
-    public Mister(String name) {
+
+    private Messages messages;
+
+    public Mister(String name, Messages messages) {
         super(name);
+        this.messages = messages;
     }
 
     public void see(Mountains mountains) {
-        Messages message = new MessagesImpl();
-        message.actionMessage("видел", this.getName(), mountains);
+        messages.actionMessage("видел", this.getName(), mountains);
     }
 
     @Override

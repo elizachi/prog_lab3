@@ -1,36 +1,36 @@
 package characters;
 import interfaces.Exploration;
 import interfaces.Messages;
-import service.MessagesImpl;
 import objects.*;
 
 public class MainCharacter extends Character implements Exploration {
 
-    public MainCharacter(String name) {
-        super(name);
-    }
+    private final Messages messages;
 
-    private final Messages message = new MessagesImpl();
+    public MainCharacter(String name, Messages messages) {
+        super(name);
+        this.messages = messages;
+    }
 
     @Override
     public void raid(PassiveObjects passiveObject) {
-        message.actionMessage("облазили и изучили", this.getName(), passiveObject);
+        messages.actionMessage("облазили и изучили", this.getName(), passiveObject);
     }
 
     @Override
     public void learn(PassiveObjects passiveObject) {
-        message.actionMessage("узнали", this.getName(),passiveObject);
+        messages.actionMessage("узнали", this.getName(),passiveObject);
     }
 
     @Override
     public void entered(Mountains passiveObject) {
-        message.actionMessage("попали в", this.getName(), passiveObject);
+        messages.actionMessage("попали в", this.getName(), passiveObject);
     }
 
     @Override
     public void belive(Mountains passiveObject) {
-        message.actionMessage("поверили что", this.getName(), passiveObject);
-        message.descriptionMessage("то самое легендарное", "плато Лэнг", 1);
+        messages.actionMessage("поверили что", this.getName(), passiveObject);
+        messages.descriptionMessage("то самое легендарное", "плато Лэнг", 1);
     }
 
 
@@ -40,8 +40,8 @@ public class MainCharacter extends Character implements Exploration {
                 "name: " + this.getName() + "\n" + "description: класс, реализующий главное лицо повествования.";
     }
 
-    public static MainCharacter createWe(){
-        return new MainCharacter("Мы");
+    public static MainCharacter createWe(Messages messages){
+        return new MainCharacter("Мы", messages);
     }
 
     @Override

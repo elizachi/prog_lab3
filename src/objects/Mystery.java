@@ -1,16 +1,18 @@
 package objects;
 
 import interfaces.Messages;
-import service.MessagesImpl;
 
 public class Mystery extends Objects{
-    public Mystery(String name, String properties) {
+
+    private final Messages messages;
+
+    public Mystery(String name, String properties, Messages messages) {
         super(name, properties);
+        this.messages = messages;
     }
 
     public void hid(Mountains object){
-        Messages message = new MessagesImpl();
-        message.descriptionMessage(getProperties(), "", 0);
-        message.actionMessage("окутывала", this.getName(), object);
+        messages.descriptionMessage(getProperties(), "", 0);
+        messages.actionMessage("окутывала", this.getName(), object);
     }
 }

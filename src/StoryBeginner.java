@@ -5,6 +5,8 @@ import objects.*;
 // TODO переделать, чтобы было более читабельно
 public class StoryBeginner {
     public static void main(String[] args) {
+        Messages writer = new MessagesImpl();
+
         PassiveObjects house = new PassiveObjects("дом", "этот");
         PassiveObjects goal = new PassiveObjects("цель", "новую");
         PassiveObjects evil = new PassiveObjects("зла", "сосредоточие");
@@ -16,29 +18,27 @@ public class StoryBeginner {
         PassiveObjects cha = new PassiveObjects("нас", "");
         PassiveObjects theme = new PassiveObjects("тему", "эту");
 
-        MainCharacter we = MainCharacter.createWe();
+        MainCharacter we = MainCharacter.createWe(writer);
 
-        CreatorNecronomicona creator = new CreatorNecronomicona("творец \"Некрономикона\"");
+        CreatorNecronomicona creator = new CreatorNecronomicona("творец \"Некрономикона\"", writer);
 
-        Mountains place = new Mountains("место на Земле", "самое таинственное, жуткое, зловещее, древнее");
-        Mountains highland = new Mountains("нагорье", "мрачное");
-        Mountains mountainRange = new Mountains("цепь", "Грандиозная горная");
-        Mountains massif = new Mountains("массив", "Наиболее высокий");
-        Mountains.Arch arch = new Mountains.Arch("Арка", "");
-        Mountains mountains = new Mountains("горы", "эти");
-        Mountains range = new Mountains("хребет", "этот");
-        Mountains anotherRange = new Mountains("хребту", "ещё более грандиозному");
+        Mountains place = new Mountains("место на Земле", "самое таинственное, жуткое, зловещее, древнее", writer);
+        Mountains highland = new Mountains("нагорье", "мрачное", writer);
+        Mountains mountainRange = new Mountains("цепь", "Грандиозная горная", writer);
+        Mountains massif = new Mountains("массив", "Наиболее высокий", writer);
+        Mountains.Arch arch = new Mountains.Arch("Арка", "", writer);
+        Mountains mountains = new Mountains("горы", "эти", writer);
+        Mountains range = new Mountains("хребет", "этот", writer);
+        Mountains anotherRange = new Mountains("хребту", "ещё более грандиозному", writer);
 
-        Mister mrWilkes = new Mister("Мистер Уилкс");
-        Mister mrMawson = new Mister("Мистер Маусон");
+        Mister mrWilkes = new Mister("Мистер Уилкс", writer);
+        Mister mrMawson = new Mister("Мистер Маусон", writer);
 
-        Woodcarver woodcarver = new Woodcarver("резчики по дереву");
-        Woodcarver carver = new Woodcarver("Скульпторы");
-        Woodcarver anotherCarver = new Woodcarver("Другие");
+        Woodcarver woodcarver = new Woodcarver("резчики по дереву", writer);
+        Woodcarver carver = new Woodcarver("Скульпторы", writer);
+        Woodcarver anotherCarver = new Woodcarver("Другие", writer);
 
-        Mystery mystery = new Mystery("тайна", "Мрачная");
-
-        Messages writer = new MessagesImpl();
+        Mystery mystery = new Mystery("тайна", "Мрачная", writer);
 
         we.raid(house);
         writer.endOfSentence(0);
