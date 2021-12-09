@@ -1,10 +1,12 @@
 import characters.*;
 import interfaces.Messages;
+import exceptions.ComandException;
 import service.MessagesImpl;
+
 import objects.*;
 // TODO переделать, чтобы было более читабельно
 public class StoryBeginner {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ComandException {
         Messages writer = new MessagesImpl();
 
         PassiveObjects house = new PassiveObjects("дом", "этот");
@@ -64,10 +66,9 @@ public class StoryBeginner {
         writer.endOfSentence(0);
         mrMawson.see(mountains);
         writer.endOfSentence(0);
-        we.learn(discovery);
+        we.learn(discovery); // here
         writer.endOfSentence(0);
-        woodcarver.assure(cha, range, anotherRange);
-        writer.endOfSentence(0);
+        writer.dialog(woodcarver, range);
         mystery.hid(mountains);
         writer.endOfSentence(0);
         carver.doNotSay(theme, true);

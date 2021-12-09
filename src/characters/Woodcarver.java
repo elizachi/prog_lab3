@@ -13,10 +13,10 @@ public class Woodcarver extends Character{
         this.messages = messages;
     }
 
-    public void assure(PassiveObjects passiveObject, Mountains firstObject, Mountains secondObject){
+    public void assure(PassiveObjects passiveObject, Mountains firstObject, Mountains secondObject, String action, boolean flag){
         messages.descriptionMessage("Древние", "", 0);
-        messages.actionMessage("уверяли", this.getName(), passiveObject);
-        this.conflict(firstObject, secondObject,true);//уступает / не уступает по высоте
+        messages.actionMessage(action, this.getName(), passiveObject);
+        this.conflict(firstObject, secondObject, flag);//уступает / не уступает по высоте
     }
 
     private void conflict(Mountains firstObject, Mountains secondObject, boolean flag) {
