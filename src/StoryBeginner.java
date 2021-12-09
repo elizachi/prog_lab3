@@ -1,6 +1,7 @@
 import characters.*;
 import interfaces.Messages;
 import exceptions.ComandException;
+import service.Interaction;
 import service.MessagesImpl;
 
 import objects.*;
@@ -8,6 +9,8 @@ import objects.*;
 public class StoryBeginner {
     public static void main(String[] args) throws ComandException {
         Messages writer = new MessagesImpl();
+
+        Interaction interaction = new Interaction();
 
         PassiveObjects house = new PassiveObjects("дом", "этот");
         PassiveObjects goal = new PassiveObjects("цель", "новую");
@@ -17,7 +20,6 @@ public class StoryBeginner {
         PassiveObjects camp = new PassiveObjects("лагеря", "нашего");
         PassiveObjects coast = new PassiveObjects("побережье", "ледяное морское");
         PassiveObjects discovery = new PassiveObjects("открытие","сокрушительное");
-        PassiveObjects cha = new PassiveObjects("нас", "");
         PassiveObjects theme = new PassiveObjects("тему", "эту");
 
         MainCharacter we = MainCharacter.createWe(writer);
@@ -31,7 +33,6 @@ public class StoryBeginner {
         Mountains.Arch arch = new Mountains.Arch("Арка", "", writer);
         Mountains mountains = new Mountains("горы", "эти", writer);
         Mountains range = new Mountains("хребет", "этот", writer);
-        Mountains anotherRange = new Mountains("хребту", "ещё более грандиозному", writer);
 
         Mister mrWilkes = new Mister("Мистер Уилкс", writer);
         Mister mrMawson = new Mister("Мистер Маусон", writer);
@@ -68,7 +69,7 @@ public class StoryBeginner {
         writer.endOfSentence(0);
         we.learn(discovery); // here
         writer.endOfSentence(0);
-        writer.dialog(woodcarver, range);
+        interaction.dialog(woodcarver, range, writer);
         mystery.hid(mountains);
         writer.endOfSentence(0);
         carver.doNotSay(theme, true);

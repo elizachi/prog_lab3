@@ -30,7 +30,17 @@ public class MainCharacter extends Character implements Exploration {
     @Override
     public void belive(Mountains passiveObject) {
         messages.actionMessage("поверили что", this.getName(), passiveObject);
-        messages.descriptionMessage("то самое легендарное", "плато Лэнг", 1);
+        class LengPlateau {
+            private final String properties;
+            private final String name;
+
+            LengPlateau(String properties, String name) {
+                this.properties = properties;
+                this.name = name;
+            }
+        }
+        LengPlateau plateau = new LengPlateau("то самое легендарное", "плато Лэнг");
+        messages.descriptionMessage(plateau.properties, plateau.name, 1);
     }
 
 
