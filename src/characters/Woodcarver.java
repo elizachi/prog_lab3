@@ -30,11 +30,18 @@ public class Woodcarver extends Character{
         }
     }
 
-    public void doNotSay(PassiveObjects passiveObject, boolean flag){
+    public void doNotSay(boolean flag){
+        PassiveObjects topic = new PassiveObjects("тему", "эту"){
+            @Override
+            public void meow(){
+                System.out.print("notmeow");
+            }
+        };
+        PassiveObjects thisTopicToo = new PassiveObjects("этом", "об"){};
         if(flag) {
-            messages.actionMessage("предпочитали не говорить про", this.getName(), passiveObject);
+            messages.actionMessage("предпочитали не говорить про", this.getName(), topic);
         } else{
-            messages.actionMessage("с неохотой и робостью брались рассказывать про", this.getName(), passiveObject);
+            messages.actionMessage("с неохотой и робостью брались рассказывать", this.getName(), thisTopicToo);
         }
     }
 

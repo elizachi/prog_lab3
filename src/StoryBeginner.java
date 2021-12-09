@@ -1,4 +1,5 @@
 import characters.*;
+import characters.Character;
 import interfaces.Messages;
 import exceptions.ComandException;
 import service.Interaction;
@@ -20,7 +21,6 @@ public class StoryBeginner {
         PassiveObjects camp = new PassiveObjects("лагеря", "нашего");
         PassiveObjects coast = new PassiveObjects("побережье", "ледяное морское");
         PassiveObjects discovery = new PassiveObjects("открытие","сокрушительное");
-        PassiveObjects theme = new PassiveObjects("тему", "эту");
 
         MainCharacter we = MainCharacter.createWe(writer);
 
@@ -72,9 +72,10 @@ public class StoryBeginner {
         interaction.dialog(woodcarver, range, writer);
         mystery.hid(mountains);
         writer.endOfSentence(0);
-        carver.doNotSay(theme, true);
+        carver.doNotSay(true);
         writer.endOfSentence(0);
-        anotherCarver.doNotSay(theme, false);
+        anotherCarver.doNotSay(false);
         writer.endOfSentence(0);
+
     }
 }

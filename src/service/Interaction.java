@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Interaction {
 
     public void dialog(Woodcarver woodcarver, Mountains range, Messages messages) throws ComandException {
-        System.out.print("Вы вступили в диалог с древними резчиками по дереву.\n" +
+        System.out.print("Вы и ваши компаньоны вступили в диалог с древними резчиками по дереву.\n" +
                 "Как вы считаете, что выше: Гималаи или эти хребты?\n");
         System.out.print("Для того, чтобы ответить на вопрос, введите команду в формате: цифра выше\n" +
                 "1 - Гималаи\n" +
