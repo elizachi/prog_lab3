@@ -43,6 +43,7 @@ public class StoryBeginner {
 
         Mystery mystery = new Mystery("тайна", "Мрачная", writer);
 
+        interaction.start();
         we.raid(house);
         writer.endOfSentence(0);
         we.learn(goal);
@@ -76,6 +77,5 @@ public class StoryBeginner {
         writer.endOfSentence(0);
         anotherCarver.doNotSay(false);
         writer.endOfSentence(0);
-
     }
 }
