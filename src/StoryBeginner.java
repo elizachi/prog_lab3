@@ -1,5 +1,6 @@
 import characters.*;
 import characters.Character;
+import interfaces.Action;
 import interfaces.Messages;
 import exceptions.ComandException;
 import service.Interaction;
@@ -43,9 +44,11 @@ public class StoryBeginner {
 
         Mystery mystery = new Mystery("тайна", "Мрачная", writer);
 
+        Action operation1 = () -> System.out.print(".");
+
         interaction.start();
         we.raid(house);
-        writer.endOfSentence(0);
+        operation1.endOfSentence();
         we.learn(goal);
         writer.endOfSentence(0);
         we.entered(place);
