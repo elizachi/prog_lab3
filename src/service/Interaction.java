@@ -2,6 +2,7 @@ package service;
 
 import characters.Woodcarver;
 import exceptions.ComandException;
+import exceptions.IllArgRuntimeException;
 import interfaces.Messages;
 import objects.Mountains;
 import objects.PassiveObjects;
@@ -54,13 +55,13 @@ public class Interaction {
                 "местоположения величественной арки.\n\n");
         System.out.print("Введите ответ в виде целого положительного числа.\n\n");
         System.out.print("180 - 100 + 180 / 90 = ");
-        if(test("82")) isItCorrect += 1;
+        if(test(82)) isItCorrect += 1;
         System.out.print("180 / 30 = ");
-        if(test("60")) isItCorrect +=  1;
+        if(test(60)) isItCorrect +=  1;
         System.out.print("180 - (180 / 36 + 180 / 3) = ");
-        if(test("115")) isItCorrect += 1;
+        if(test(60)) isItCorrect += 1;
         System.out.print("(180 / 6 + 180 / 36)*2 = ");
-        if(test("70")) isItCorrect += 1;
+        if(test(70)) isItCorrect += 1;
         if(isItCorrect == 4){
             System.out.print("Уилкс и Маусон очень рады, что не ошиблись на ваш счёт.\n\n");
         }
@@ -74,18 +75,24 @@ public class Interaction {
         }
     }
 
-    private boolean test(String correctAnswer){
+    private boolean test(int correctAnswer){
         try {
             Scanner console = new Scanner(System.in);
             String answer = console.next();
             if(answer.isEmpty()) {
-                throw new ComandException("");
+                throw new ComandException("Не молчите, дайте ответ.");
             }
             else {
-                return answer.equals(correctAnswer);
+                for (int i = 0; i < answer.length(); i++){
+                    if(answer.charAt(i) >= '0' && answer.charAt(i) <= '9'){}
+                    else {
+                        throw new IllArgRuntimeException("Ваш ответ не должен содержать буквы и иные посторонние символы, только цифры.");
+                    }
+                }
+                return Integer.parseInt(answer) == correctAnswer;
             }
-        } catch(ComandException e) {
-            System.err.print("Не молчите, дайте ответ.\n\n");
+        } catch(ComandException | IllArgRuntimeException e) {
+            System.err.print(e.getMessage()+"\n\n");
             this.test(correctAnswer);
         }
         return true;
