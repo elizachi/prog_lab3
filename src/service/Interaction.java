@@ -1,17 +1,20 @@
 package service;
-
 import characters.Woodcarver;
 import exceptions.ComandException;
 import exceptions.IllArgRuntimeException;
 import interfaces.Messages;
 import objects.Mountains;
 import objects.PassiveObjects;
-
 import java.util.Objects;
 import java.util.Scanner;
 
+// Класс, в котором реализуется интерактив для взаимодействия пользователя и истории.
+// В классе возможны выбросы исключений, так как идет взаимодействие с пользователем, где он должен вводить что-либо на консоль
 public class Interaction {
 
+    // Метод, запрашивающий у пользователя ввод его имени - никнейма при помощи команты Меня_зовут.
+    // При неправильно введении команды, при введении команды без имени, при попытке пропустить нажатием кнопки enter
+    // Совершается выброс исключения, и программа рекурсивно возвращает пользовтеля к началу, предлагая попробовать снова
     public void start(){
         System.out.print("Вы начали свое путешествие.\n\n");
         System.out.print("Пробираясь сквозь густую чащу леса вы вышли к заброшенному дому, где повстречали двух мужчин.\n\n");
@@ -20,10 +23,11 @@ public class Interaction {
         try {
             Scanner console = new Scanner(System.in);
             String comand_gamerName = console.nextLine();
+            // при нажатии кнопки enter
             if(comand_gamerName.isEmpty()) {
                 throw new ComandException("Молчать не очень дружелюбно. Вспомните, в какой вы ситуации:\n");
             }
-            else {
+            else { // при ошибке ввода команды или ввода команды без имени
                 if(comand_gamerName.length() < 11) {
                     throw new ComandException("Такой команды не существует. Попробуйте снова.");
                 }
@@ -42,12 +46,15 @@ public class Interaction {
                     throw new ComandException("Такой команды не существует. Попробуйте снова.");
                 }
             }
-        } catch(ComandException e) {
+        } catch(ComandException e) { // ловим исключение, если вдруг а=пользователь ошибся
+            // и снова вызываем метод, чтобы можно было начать сначала
             System.err.print(e.getMessage()+"\n\n");
             this.start();
         }
     }
 
+    // Метод, запрашивающий у пользователя вычисления в приведенных примерах.
+    // От правильности / неправильности / корректности введенного зависит дальнейшая история.
     public void arithmetic(){
         int isItCorrect = 0;
         System.out.print("Ваши компаньоны заметили, что вы достаточно умны. Они заинтересованы " +
@@ -62,19 +69,23 @@ public class Interaction {
         if(test(115 )) isItCorrect += 1;
         System.out.print("(180 / 6 + 180 / 36)*2 = ");
         if(test(70)) isItCorrect += 1;
+        // Если нет ни одной ошибки
         if(isItCorrect == 4){
             System.out.print("Уилкс и Маусон очень рады, что не ошиблись на ваш счёт.\n\n");
-        }
+        } // Если все что ввел пользователь - ошибка
         else if(isItCorrect == 0){
             System.out.print("Уилкс и Маусон очень разочарованы. Они сообщили вам верные " +
                     "координаты и попросили не путаться под ногами.\n\n");
-        }
+        } // Если есть хотя бы одна ошибка или хотя бы один правильный ответ
         else{
             System.out.print("Уилкс и Маусон в замешательстве, возможно, у вас ошибка в парочке ответов. " +
                     "Они сообщили вам верные координаты и добавили, что все еще не доверяют вам.\n\n");
         }
     }
 
+    // Метод, использующийся внутри метода arithmetic для проверки корректности введенных пользователем значений
+    // При введении символов, отличных от цифр вызывается исключение и программа рекурсивно
+    // возвращает пользовтеля к началу, предлагая попробовать снова.
     private boolean test(int correctAnswer){
         try {
             Scanner console = new Scanner(System.in);
@@ -98,6 +109,10 @@ public class Interaction {
         return true;
     }
 
+    // Метод, предлагающий пользователю поспорить с Древними резчиками по дереву.
+    // При желании можно пропустить диалог, нажав кнопку enter. В ином случае предлагается использовать команду выше.
+    // При неправильно введении команды свершается выброс исключения, и программа рекурсивно
+    // возвращает пользовтеля к началу, предлагая попробовать снова
     public void dialog(Woodcarver woodcarver, Mountains range, Messages messages) throws ComandException {
         System.out.print("\n\nВы и ваши компаньоны вступили в диалог с древними резчиками по дереву.\n" +
                 "Как вы считаете, что выше: Гималаи или эти хребты?\n");

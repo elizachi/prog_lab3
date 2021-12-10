@@ -4,12 +4,12 @@ import interfaces.Messages;
 import exceptions.ComandException;
 import service.Interaction;
 import service.MessagesImpl;
-
 import objects.*;
 
+// Главный класс, в котром оздаются все объекты для дальнейшей истории
 public class StoryBeginner {
     private static final Messages writer = new MessagesImpl();
-
+    // главный метод, запускающий сию котовасию
     public static void main(String[] args) throws ComandException {
 
         Interaction interaction = new Interaction();
@@ -69,7 +69,7 @@ public class StoryBeginner {
         doAction(() -> carver.doNotSay(true));
         doAction(() -> anotherCarver.doNotSay(false));
     }
-
+    // Метод, для реализации функции постановки знака препинания
     private static void doAction(Action action) {
         action.endOfSentence();
         writer.endOfSentence(0);
