@@ -22,11 +22,11 @@ public class Woodcarver extends Character{
     private void conflict(Mountains firstObject, Mountains secondObject, boolean flag) {
         if(flag){
             messages.descriptionMessage("\"" + firstObject.getName(), "уступает по высоте " +
-                    secondObject.getProperties() + " " + secondObject.getName() + "!\"", 1);
+                    secondObject.getProperties() + " " + secondObject.getName() + "!\"\n", 1);
         }
         else {
             messages.descriptionMessage("\"" + firstObject.getName(), "не уступает по высоте " +
-                    secondObject.getProperties() + " " + secondObject.getName() + "!\"", 1);
+                    secondObject.getProperties() + " " + secondObject.getName() + "!\"\n", 1);
         }
     }
 

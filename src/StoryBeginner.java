@@ -58,6 +58,8 @@ public class StoryBeginner {
         writer.endOfSentence(0);
         mountainRange.cross(continent);
         writer.endOfSentence(0);
+        interaction.arithmetic();
+        writer.endOfSentence(0);
         massif.formed();
         writer.endOfSentence(0);
         arch.stand(camp);
