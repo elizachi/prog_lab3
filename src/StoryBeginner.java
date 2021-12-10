@@ -7,7 +7,7 @@ import service.Interaction;
 import service.MessagesImpl;
 
 import objects.*;
-// TODO переделать, чтобы было более читабельно
+
 public class StoryBeginner {
     public static void main(String[] args) throws ComandException {
         Messages writer = new MessagesImpl();

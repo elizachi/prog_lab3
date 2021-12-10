@@ -59,7 +59,7 @@ public class Interaction {
         System.out.print("180 / 30 = ");
         if(test(60)) isItCorrect +=  1;
         System.out.print("180 - (180 / 36 + 180 / 3) = ");
-        if(test(60)) isItCorrect += 1;
+        if(test(115)) isItCorrect += 1;
         System.out.print("(180 / 6 + 180 / 36)*2 = ");
         if(test(70)) isItCorrect += 1;
         if(isItCorrect == 4){
