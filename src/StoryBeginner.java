@@ -1,5 +1,4 @@
 import characters.*;
-import characters.Character;
 import interfaces.Action;
 import interfaces.Messages;
 import exceptions.ComandException;
@@ -9,8 +8,9 @@ import service.MessagesImpl;
 import objects.*;
 
 public class StoryBeginner {
+    private static final Messages writer = new MessagesImpl();
+
     public static void main(String[] args) throws ComandException {
-        Messages writer = new MessagesImpl();
 
         Interaction interaction = new Interaction();
 
@@ -44,43 +44,34 @@ public class StoryBeginner {
 
         Mystery mystery = new Mystery("тайна", "Мрачная", writer);
 
-        Action operation1 = () -> System.out.print(".");
-
         interaction.start();
-        we.raid(house);
-        operation1.endOfSentence();
-        we.learn(goal);
-        writer.endOfSentence(0);
-        we.entered(place);
-        writer.endOfSentence(0);
-        we.belive(highland);
-        writer.endOfSentence(0);
-        creator.afraid(evil);
-        writer.endOfSentence(0);
-        mountainRange.born(land);
-        writer.endOfSentence(0);
-        mountainRange.cross(continent);
-        writer.endOfSentence(0);
+
+        doAction(() -> we.raid(house));
+        doAction(() -> we.learn(goal));
+        doAction(() -> we.entered(place));
+        doAction(() -> we.belive(highland));
+        doAction(() -> creator.afraid(evil));
+        doAction(() -> mountainRange.born(land));
+        doAction(() -> mountainRange.cross(continent));
+
         interaction.arithmetic();
-        writer.endOfSentence(0);
-        massif.formed();
-        writer.endOfSentence(0);
-        arch.stand(camp);
-        writer.endOfSentence(0);
-        arch.ends(coast);
-        writer.endOfSentence(0);
-        mrWilkes.see(mountains);
-        writer.endOfSentence(0);
-        mrMawson.see(mountains);
-        writer.endOfSentence(0);
-        we.learn(discovery); // here
-        writer.endOfSentence(0);
+
+        doAction(() -> massif.formed());
+        doAction(() -> arch.stand(camp));
+        doAction(() -> arch.ends(coast));
+        doAction(() -> mrWilkes.see(mountains));
+        doAction(() -> mrMawson.see(mountains));
+        doAction(() -> we.learn(discovery));
+
         interaction.dialog(woodcarver, range, writer);
-        mystery.hid(mountains);
-        writer.endOfSentence(0);
-        carver.doNotSay(true);
-        writer.endOfSentence(0);
-        anotherCarver.doNotSay(false);
+
+        doAction(() -> mystery.hid(mountains));
+        doAction(() -> carver.doNotSay(true));
+        doAction(() -> anotherCarver.doNotSay(false));
+    }
+
+    private static void doAction(Action action) {
+        action.endOfSentence();
         writer.endOfSentence(0);
     }
 }
