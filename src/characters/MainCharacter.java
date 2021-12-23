@@ -37,7 +37,7 @@ public class MainCharacter extends Character implements Exploration {
     @Override
     public void belive(Mountains passiveObject) {
         messages.actionMessage("поверили что", this.getName(), passiveObject);
-        // Иннер класс, который фиг найдешь когда нужно.
+        // Локальный ннер класс, который фиг найдешь когда нужно.
         // Реализует объект легендарное плато Ленг, о котором узнали главные герои.
         class LengPlateau {
             private final String properties;
